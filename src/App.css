@@ -1,0 +1,58 @@
+html,body{
+    background-color: yellow;
+}
+.main {
+    text-align: center;
+}
+
+.btn{
+    margin-top: 80px;
+    font-size: 20px;
+    border-radius: 20px !important;
+    width: 120px;
+    border: black;
+    background-color: black;
+}
+
+.capt{
+    
+}
+
+.upload{
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    bottom: 10px;
+    background-color: white;
+    color: black;
+    left: 9px;
+    right: 0;
+    font-size: 15px;
+}
+
+Link{
+    display: none;
+}
+
+Webcam,video,.capt{
+    position: absolute; 
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.human{
+    position: absolute;
+    height: 100%;
+    margin: auto;
+    padding-bottom: 25px;
+    width: 100%;
+    object-fit: contain;
+    text-align: center;
+}

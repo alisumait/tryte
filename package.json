@@ -1,0 +1,43 @@
+{
+  "name": "smart-shopper",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
+    "@material-ui/lab": "^3.0.0-alpha.23",
+    "b64-to-blob": "^1.2.19",
+    "base64-img": "^1.0.4",
+    "browserify-fs": "^1.0.0",
+    "fs": "0.0.1-security",
+    "install": "^0.12.2",
+    "jquery": "^3.3.1",
+    "material-ui-slider-label": "git+https://github.com/tariqwest/material-ui-slider-label.git",
+    "npm": "^6.4.1",
+    "path": "^0.12.7",
+    "rc-slider": "^8.6.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-fader": "^2.0.3",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-transition-switch": "^1.1.0",
+    "react-scripts": "2.1.1",
+    "react-webcam": "^1.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
