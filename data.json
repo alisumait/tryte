@@ -1,0 +1,42 @@
+{
+    "clothes": [
+        {
+            "male": [
+                {
+                    "name": "Red Suit",
+                    "url": "https://lh5.googleusercontent.com/eeJDJtm6YeiR8Xvg7y91Gcnl6P-SCkt1F_gkUKL6vwCFkyyKru7IDBwbZ6856w7R6Qzv6-3EwOK5ar_twW_D=w1920-h942-rw",
+                    "price": 439,
+                    "minage": 20,
+                    "maxage": 35
+                },
+                {
+                    "name": "Red Suit",
+                    "url": "https://lh5.googleusercontent.com/60m4QUMe7EfzWPv-V_WxzpeWKjSJ0PT2DLg1HtUu7J7jeG9YB-H3CTjAsxsbtNNBWo5SCDpvLSxl9cbEaiGv=w1920-h942",
+                    "price": 439,
+                    "minage": 20,
+                    "maxage": 35
+                }
+            ]
+        },
+        {
+            "female": [
+                
+                {
+                    "name": "Formal Grey",
+                    "url": "https://lh5.googleusercontent.com/xkomrhZDI8a4IwKaOVmOkBJq0laoxsiQ0MKBWNH0ofqxDeJffE-kdeipOFRNmWoI1xDhSs44efU5hkBEmOgJ=w1920-h942",
+                    "price": 199,
+                    "minage": 20,
+                    "maxage": 35
+                },
+                {
+                    "name": "Red Suit",
+                    "url": "https://lh5.googleusercontent.com/eeJDJtm6YeiR8Xvg7y91Gcnl6P-SCkt1F_gkUKL6vwCFkyyKru7IDBwbZ6856w7R6Qzv6-3EwOK5ar_twW_D=w1920-h942-rw",
+                    "price": 439,
+                    "minage": 20,
+                    "maxage": 35
+                }
+            
+            ]
+        }
+    ]
+}
