@@ -34,7 +34,6 @@ class App extends Component {
         maxPrice:0
   };
 }
-
     handleData(data) {
         console.log(data);
 
@@ -45,65 +44,6 @@ class App extends Component {
         this.state.styles = data.styles;
             }
     
-  render() {
-     
-      let value = this.state.value;
-      
-    return (
-      
-        <Router>
-        <Switch component={Fader}>
-        
-       <Route exact strict path="/" render={
-            ()=> {
-            return(
-                <div className="main">
-                    <Logo></Logo> 
-                    <Pricer></Pricer>
-                    <Link to="/start"><input type="button" className="btn btn-primary" value="Start"></input></Link>
-                    </div>
-        )
-            }
-        } />
-
-        <Route exact strict path="/start" render={
-            ()=> {
-            return(
-                    
-            <WebcamCap onData={this.handleData}/>
-                    
-        )
-            }
-        } />
-
-<Route exact strict path="/processing" render={
-            ()=> {
-            return(
-                    
-            <Waiting></Waiting>
-                    
-        )
-            }
-        } />
-
-<Route exact strict path="/items" render={
-            ()=> {
-            return(
-                    
-            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
-            )
-        }} />
-
-        
-
-        </Switch>
-        </Router>
-        
-    );
-  }
-=======
-    }
-
     speak(text) {
         const synth = window.speechSynthesis;
         utterance.text = text;
@@ -149,17 +89,17 @@ class App extends Component {
         });
     }
 
-    render() {
-
-        let value = this.state.value;
-
-
-        return (
-
-            <Router>
-                <Switch component={Fader}>
-
-                    <Route exact strict path="/" render={
+    
+  render() {
+     
+      let value = this.state.value;
+      
+    return (
+      
+        <Router>
+        <Switch component={Fader}>
+        
+       <Route exact strict path="/" render={
                         () => {
                             if (this.state.start) {
                                 return (
@@ -176,43 +116,41 @@ class App extends Component {
                         }
                     } />
 
-                    <Route exact strict path="/start" render={
-                        () => {
-                            return (
+        <Route exact strict path="/start" render={
+            ()=> {
+            return(
+                    
+            <WebcamCap onData={this.handleData}/>
+                    
+        )
+            }
+        } />
 
-                                <WebcamCap />
+<Route exact strict path="/processing" render={
+            ()=> {
+            return(
+                    
+            <Waiting></Waiting>
+                    
+        )
+            }
+        } />
 
-                            )
-                        }
-                    } />
+<Route exact strict path="/items" render={
+            ()=> {
+            return(
+                    
+            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
+            )
+        }} />
 
-                    <Route exact strict path="/processing" render={
-                        () => {
-                            return (
+        
 
-                                <Waiting></Waiting>
-
-                            )
-                        }
-                    } />
-
-                    <Route exact strict path="/items" render={
-                        () => {
-                            return (
-                                <h1></h1>
-                                //not implemented yet
-                                // <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
-                            )
-                        }} />
-
-
-
-                </Switch>
-            </Router>
-
-        );
-    }
->>>>>>> 930144b69a995248aa59dc9286d234c97072d276
+        </Switch>
+        </Router>
+        
+    );
+  }
 }
 
 export default App;
