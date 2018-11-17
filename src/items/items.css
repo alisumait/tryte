@@ -1,0 +1,22 @@
+.pricer{
+    width: 900px !important;
+    margin: auto;
+    margin-top: 190px;
+}
+.rc-slider-track{
+    background-color: darkcyan;
+    height: 10px;
+}
+.rc-slider-handle{
+    margin-top: -5px;
+    border: 2px solid black !important;
+    height: 20px;
+    width: 20px;
+}
+.rc-slider-tooltip-inner{
+    background-color: unset !important;
+    box-shadow: unset;
+    margin-top: 60px;
+    color: black;
+    font-weight: bold;
+}

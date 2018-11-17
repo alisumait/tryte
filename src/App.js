@@ -16,16 +16,30 @@ recognition.lang = 'en-US';
 const utterance = new SpeechSynthesisUtterance();
 
 class App extends Component {
-
     constructor(props) {
 
         super(props);
 
         this.PricerDone = this.PricerDone.bind(this);
+        this.handleData = this.handleData.bind(this);
+
         this.state = {
             value: 50,
-            start:false
+            styles: [],
+            garments: [],
+            gender: "",
+            age: 0
         };
+    }
+
+    handleData(data) {
+        console.log(data);
+
+        //        this.state = data;
+        this.state.age = data.age;
+        this.state.garments = data.garments;
+        this.state.gender = data.gender;
+        this.state.styles = data.styles;
     }
 
     speak(text) {
@@ -40,16 +54,16 @@ class App extends Component {
     }
 
     PricerDone() {
-        this.startConversation('Now, shall we start?'); 
+        this.startConversation('Now, shall we start?');
     }
 
     handleSpeech(r) {
-        if (r.toLowerCase().includes('y')){
+        if (r.toLowerCase().includes('y')) {
             console.log('djdfhjsfdjkfaskk   ')
             this.setState({
-                start:true
+                start: true
             });
-        }else{
+        } else {
             this.startConversation('Why not, we gotta go. Do you want to start?');
         }
 
@@ -76,7 +90,7 @@ class App extends Component {
     render() {
 
         let value = this.state.value;
-        
+
 
         return (
 
@@ -85,7 +99,7 @@ class App extends Component {
 
                     <Route exact strict path="/" render={
                         () => {
-                            if(this.state.start){
+                            if (this.state.start) {
                                 return (
                                     <Redirect to="/start"></Redirect>
                                 )
@@ -124,11 +138,9 @@ class App extends Component {
                         () => {
                             return (
 
-                                <h1>Items here</h1>
-
+                                <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
                             )
-                        }
-                    } />
+                        }} />
 
 
 
