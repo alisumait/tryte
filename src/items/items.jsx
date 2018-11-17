@@ -59,10 +59,6 @@ class Items extends Component {
                     })
                 });
             }, 5000);
-           
-        
-
-
     }
 
     render() {
