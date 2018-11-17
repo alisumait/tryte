@@ -7,6 +7,7 @@ import Switch from 'react-router-transition-switch';
 import Logo from './logo/logo.jsx';
 import Pricer from './pricer/pricer.jsx';
 import WebcamCap from "./webcam/webcam.jsx";
+import Waiting from "./waiting/waiting.jsx";
 import './App.css';
 
 class App extends Component {
@@ -56,7 +57,17 @@ class App extends Component {
             ()=> {
             return(
                     
-            <h1>Hi</h1>
+            <Waiting></Waiting>
+                    
+        )
+            }
+        } />
+
+<Route exact strict path="/items" render={
+            ()=> {
+            return(
+                    
+            <h1>Items here</h1>
                     
         )
             }

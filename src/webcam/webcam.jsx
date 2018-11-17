@@ -117,8 +117,7 @@ input(e){
         }).then(e => e.json())
         .then(e=>console.log(e));
               this.setState({process: true});
-var capt = document.getElementsByClassName('capt');
-    document.body.removeChild(capt);
+    $('body').children('img').last().remove();
       }
 
   render() {

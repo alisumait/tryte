@@ -1,12 +1,46 @@
+@font-face {
+    font-family: "Averta";
+    src: url("./fonts/Averta-Light.woff") format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Averta";
+    src: url("./fonts/Averta-Bold.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Averta";
+    src: url("./fonts/Averta-Semibold.woff") format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Averta";
+    src: url("./fonts/Averta-Regular.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: Averta;
+}
+
 html,body{
-    background-color: yellow;
+    background-color: snows;
 }
 .main {
+    margin: auto;
+    height: 290px;
+    display: block;
     text-align: center;
 }
 
 .btn{
-    margin-top: 80px;
+    margin-top: 60px;
     font-size: 20px;
     border-radius: 20px !important;
     width: 120px;
@@ -27,6 +61,7 @@ html,body{
     color: black;
     left: 9px;
     right: 0;
+    padding: 6px;
     font-size: 15px;
 }
 
