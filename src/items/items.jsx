@@ -6,7 +6,7 @@ import './items.css';
 
 class Items extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         
         var arr;
@@ -15,31 +15,43 @@ class Items extends Component {
             age: this.props.age,
             gender: this.props.gender,
             styles: this.props.styles,
-            garments: this.props.garments
+            garments: this.props.garments,
+            filtered: []
         }
     }
     
-    componentDidMount(){
+    filterByAge(arr, age) {
+        return arr.filter(a =>
+            age >= a.minage && age <= a.maxage
+        );
+    }
+
+    componentDidMount() {
         var that = this;
         
-        $.getJSON('data.json', function(data){
+        $.getJSON('data.json', function (data) {
         let age = that.props.age;
         let price = that.props.price;
             
-        if(that.props.gender.toLowerCase().includes('f')){
-            let female_list = data.clothes[1].female;
-            let filteredF = female_list.filter(a=>
-                age >= a.minage && age <= a.maxage
-            );
+            let gender_list;
             
-        }else{
-            let male_list = data.clothes[0].male;
-            let filteredM = male_list.filter(a=>
-                age >= a.minage && age <= a.maxage
-            );
-            console.log(filteredM);
+            if (that.props.gender.toLowerCase().includes('f')) {
+                gender_list = data.clothes[1].female;
+            } else {
+                gender_list = data.clothes[0].male;
         }
+            let tmp_filtered = this.filterByAge(gender_list, age);
             
+            this.setState({
+                filtered: tmp_filtered.map((value, index) => {
+                    return {
+                        id: index,
+                        url: value.url,
+                        name: value.name,
+                        price: value.price
+                    }
+                })
+            });
         })
         
         
