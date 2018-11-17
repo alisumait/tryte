@@ -5,10 +5,9 @@ from tempfile import mkstemp as mktemp
 from os import fdopen
 import json
 
-def send_coqnitics(base64_img):
+def send_coqnitics(base64_img, post_url):
     raw_img = b64decode(base64_img)
     
-    post_url = 'https://face.recoqnitics.com/analyze'
     post_data = {'access_key': '866b74743f9ac85998d7', 
             'secret_key': '3754dd38511718413783b24c18b2c36669b47a8e'}
 
@@ -21,13 +20,21 @@ def send_coqnitics(base64_img):
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
-def index():
+@app.route('/<req_type>', methods=['POST'])
+def index(req_type):
     imageBase64 = request.values['image']
     
-    respond = send_coqnitics(imageBase64)
+    req_url = ""
+    
+    if req_type == 'face':
+        req_url = 'https://face.recoqnitics.com/analyze'
+    elif req_type == 'fashion':
+        req_url = 'https://fashion.recoqnitics.com/analyze'
+    else:
+        return 'Type not supported', 401
+
+    respond = send_coqnitics(imageBase64, req_url)
     return respond
-    return '<img src="data:image/png;base64,{}" />'.format(imageBase64)
 
 if __name__ == "__main__":
     app.run()
