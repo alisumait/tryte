@@ -18,6 +18,7 @@ class Pricer extends Component {
 
         this.rangeChange = this.rangeChange.bind(this)
         this.updateRange = this.updateRange.bind(this)
+        this.sendData = this.sendData.bind(this)
         this.state = {
             vals: [80, 100]
         }
@@ -29,9 +30,11 @@ class Pricer extends Component {
 
     updateRange(from, to) {
         console.log("dahfkhsaklfkljfdsahgas")
+        let res = [from, to];
         this.setState({
-            vals: [from, to]
+            vals: res
         })
+        this.sendData(res)
 
         console.log(this.state.vals)
     }
@@ -56,6 +59,13 @@ class Pricer extends Component {
         this.updateRange(matches[0], matches[1]);
         setTimeout(this.props.onPricerDone, 500)
     }
+
+    sendData(value){
+        this.props.onData(value)
+    }
+    // sendData(){
+    //     this.props.onData(this.state.vals)
+    // }
 
     componentWillMount() {
         recognition.addEventListener('result', (e) => {
@@ -86,7 +96,8 @@ class Pricer extends Component {
     rangeChange(value){
         this.setState({
             vals: value
-        })        
+        })
+        this.sendData(value)     
     }
 
     render() {

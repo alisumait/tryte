@@ -21,18 +21,29 @@ class App extends Component {
         super(props);
 
         this.PricerDone = this.PricerDone.bind(this);
-        this.handleData = this.handleData.bind(this);
+        this.handleDataWebcam = this.handleDataWebcam.bind(this);
+        this.handleDataPricer = this.handleDataPricer.bind(this);
+        this.handleSpeech = this.handleSpeech.bind(this)
 
         this.state = {
             value: 50,
             styles: [],
             garments: [],
             gender: "",
-            age: 0
+            age: 0,
+            minPrice: 0,
+            maxPrice: 0
         };
+
+        this.pricerChild = React.createRef();
     }
 
-    handleData(data) {
+    handleDataPricer(data){
+        this.state.minPrice = parseInt(data[0]) ;
+        this.state.maxPrice = parseInt(data[1]);
+    }
+
+    handleDataWebcam(data) {
         console.log(data);
 
         //        this.state = data;
@@ -40,6 +51,7 @@ class App extends Component {
         this.state.garments = data.garments;
         this.state.gender = data.gender;
         this.state.styles = data.styles;
+        console.log(this.state)
     }
 
     speak(text) {
@@ -62,7 +74,11 @@ class App extends Component {
             console.log('djdfhjsfdjkfaskk   ')
             this.setState({
                 start: true
+
             });
+            // this.pricerChild.current.sendData()
+            console.log(this.state)
+            console.log(this.pricerChild)
         } else {
             this.startConversation('Why not, we gotta go. Do you want to start?');
         }
@@ -107,7 +123,7 @@ class App extends Component {
                             return (
                                 <div className="main">
                                     <Logo></Logo>
-                                    <Pricer onPricerDone={this.PricerDone} />
+                                    <Pricer ref={this.pricerChild} onPricerDone={this.PricerDone} onData={this.handleDataPricer}/>
                                     <Link to="/start"><input id="link-btn" type="button" className="btn btn-primary" value="Start"></input></Link>
                                 </div>
                             )
@@ -118,7 +134,7 @@ class App extends Component {
                         () => {
                             return (
 
-                                <WebcamCap />
+                                <WebcamCap onData={this.handleDataWebcam}/>
 
                             )
                         }
