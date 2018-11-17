@@ -80,18 +80,30 @@ class WebcamCap extends Component {
 
         const video = this.webcam.stream.getVideoTracks()[0];
         
-        var blob = this.b64toBlob(imageSrc.split(',')[1], 'image/jpeg');
+//        var blob = this.b64toBlob(imageSrc.split(',')[1], 'image/jpeg');
 
+        var base = imageSrc.split(',')[1];
 
+    let formData = new FormData();
+        formData.append('image', base);
+
+        fetch('http://localhost:5000', {
+            method: "POST",
+            body: formData
+        }).then(e => e.json())
+        .then(e=>console.log(e));
+              this.setState({process: true});
+    $('body').children('img').last().remove();
+      
 
         
-        var img = new Image();
-        img.src = URL.createObjectURL(blob);
-        img.classList.add("capt");
-        document.body.appendChild(img);
-      $("button").on("click", function() {
-                $("input").trigger("click");
-            });      
+//        var img = new Image();
+//        img.src = URL.createObjectURL(blob);
+//        img.classList.add("capt");
+//        document.body.appendChild(img);
+//      $("button").on("click", function() {
+//                $("input").trigger("click");
+//            });      
       video.stop();
         var file = this.saveImage(imageSrc);
         
@@ -105,19 +117,19 @@ class WebcamCap extends Component {
     }
  
 input(e){
-    let file =e.target.files[0];
-    let formData = new FormData();
-        formData.append('filename', file);
-        formData.append('access_key', '866b74743f9ac85998d7');
-        formData.append('secret_key', '3754dd38511718413783b24c18b2c36669b47a8e');
-
-        fetch('https://face.recoqnitics.com/analyze', {
-            method: "POST",
-            body: formData
-        }).then(e => e.json())
-        .then(e=>console.log(e));
-              this.setState({process: true});
-    $('body').children('img').last().remove();
+//    let file =e.target.files[0];
+//    let formData = new FormData();
+//        formData.append('filename', file);
+//        formData.append('access_key', '866b74743f9ac85998d7');
+//        formData.append('secret_key', '3754dd38511718413783b24c18b2c36669b47a8e');
+//
+//        fetch('localhost:5000', {
+//            method: "POST",
+//            body: formData
+//        }).then(e => e.json())
+//        .then(e=>console.log(e));
+//              this.setState({process: true});
+//    $('body').children('img').last().remove();
       }
 
   render() {
@@ -141,8 +153,7 @@ input(e){
         
       <div>
             <img className="human" src={Human}></img>
-            <input type="file" onChange={this.input} style={{display: 'none'}} />
-                    <button className="btn btn-primary upload">Choose Image</button>
+
 
         <Webcam
           audio={false}
