@@ -8,6 +8,7 @@ import Logo from './logo/logo.jsx';
 import Pricer from './pricer/pricer.jsx';
 import WebcamCap from "./webcam/webcam.jsx";
 import Waiting from "./waiting/waiting.jsx";
+import Items from "./items/items.jsx";
 import './App.css';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -103,17 +104,17 @@ class App extends Component {
         });
     }
 
-    render() {
-
-        let value = this.state.value;
-
-
-        return (
-
-            <Router>
-                <Switch component={Fader}>
-
-                    <Route exact strict path="/" render={
+    
+  render() {
+     
+      let value = this.state.value;
+      
+    return (
+      
+        <Router>
+        <Switch component={Fader}>
+        
+       <Route exact strict path="/" render={
                         () => {
                             if (this.state.start) {
                                 return (
@@ -130,6 +131,7 @@ class App extends Component {
                         }
                     } />
 
+
                     <Route exact strict path="/start" render={
                         () => {
                             return (
@@ -140,32 +142,21 @@ class App extends Component {
                         }
                     } />
 
-                    <Route exact strict path="/processing" render={
-                        () => {
-                            return (
+<Route exact strict path="/items" render={
+            ()=> {
+            return(
+                    
+            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
+            )
+        }} />
 
-                                <Waiting></Waiting>
+        
 
-                            )
-                        }
-                    } />
-
-                    <Route exact strict path="/items" render={
-                        () => {
-                            return (
-                                <h1></h1>
-                                //not implemented yet
-                                // <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
-                            )
-                        }} />
-
-
-
-                </Switch>
-            </Router>
-
-        );
-    }
+        </Switch>
+        </Router>
+        
+    );
+  }
 }
 
 export default App;

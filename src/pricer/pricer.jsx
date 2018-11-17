@@ -126,4 +126,5 @@ class Pricer extends Component {
 
 }
 
+
 export default Pricer;
