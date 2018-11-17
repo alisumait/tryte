@@ -13,14 +13,28 @@ import './App.css';
 class App extends Component {
     
     constructor(props){
+        super(props);
         
-    super(props);
+                this.handleData = this.handleData.bind(this);
+
     this.state = {
-    value: 50
+    value: 50,
+        styles: [],
+            garments: [],
+            gender: "",
+            age: 0
   };
 }
     
-    
+    handleData(data){
+                        console.log(data);
+
+//        this.state = data;
+        this.state.age = data.age;
+        this.state.garments = data.garments;
+        this.state.gender = data.gender;
+        this.state.styles = data.styles;
+            }
     
   render() {
      
@@ -47,7 +61,7 @@ class App extends Component {
             ()=> {
             return(
                     
-            <WebcamCap/>
+            <WebcamCap onData={this.handleData}/>
                     
         )
             }
@@ -67,11 +81,9 @@ class App extends Component {
             ()=> {
             return(
                     
-            <h1>Items here</h1>
-                    
-        )
-            }
-        } />
+            <h1>nhf</h1>
+            )
+        }} />
 
         
 
