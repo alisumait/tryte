@@ -4,18 +4,40 @@
             "male": [
                 {
                     "name": "Red Suit",
-                    "url": "https://lh5.googleusercontent.com/eeJDJtm6YeiR8Xvg7y91Gcnl6P-SCkt1F_gkUKL6vwCFkyyKru7IDBwbZ6856w7R6Qzv6-3EwOK5ar_twW_D=w1920-h942-rw",
+                    "url": "https://lh6.googleusercontent.com/u3VxlkQs0hYzGnGE3c8of9BUbnEXykBrA3-AfbqDhJqldvN2lxY1lpYuLysVwHhzYb46c1HlNT4yFrASmPqG=w1366-h577-rw ",
                     "price": 439,
                     "minage": 20,
                     "maxage": 35
                 },
                 {
-                    "name": "Red Suit",
-                    "url": "https://lh5.googleusercontent.com/60m4QUMe7EfzWPv-V_WxzpeWKjSJ0PT2DLg1HtUu7J7jeG9YB-H3CTjAsxsbtNNBWo5SCDpvLSxl9cbEaiGv=w1920-h942",
-                    "price": 439,
-                    "minage": 20,
-                    "maxage": 35
+                    "name": "Black Suit",
+                    "url": "https://lh5.googleusercontent.com/CtyFRkOzKtSh98NdbQXkoZlDHbL2JSjhpMNvH3Vi-u_tiqckyfG9HTUSRLCD1G_70eJAWLLRscxoteerfiBH=w1366-h577-rw",
+                    "price": 330,
+                    "minage": 18,
+                    "maxage": 37
+                },
+                {
+                    "name": "Blue Suit", "url":"https://lh5.googleusercontent.com/rCj6Ns8j54I_UMohEl7WTElzyp6Bk7QFpmxdkHeycdIrg_vjCFc1jDlZCbH2zkmmZu7fe8Ng_aSyG_FV7cVh=w1366-h626",
+                    "price": 280,
+                    "minage": 18,
+                    "maxage": 28
+                },
+                {
+                    "name": "Black Jacket",
+                    "url": "https://lh5.googleusercontent.com/EF5zGmrAKqxGniQeX9nNaqvKcHoHRALLqcdEt8ve04Z_YfxHBI4TGhr9VJw_w143CSiN9sPsAHyaYA-eQY6o=w1366-h626",
+                    "price": 500,
+                    "minage": 18,
+                    "maxage": 38
+                },
+ 		  {
+                    "name": "Yellow T-Shirt",
+                    "url": "https://lh5.googleusercontent.com/J--0Q2R8Bv-1EWP9i7VSglOJsi-yNWPxR71l3kY2F74TfC4wqjzmPFE_zdSeUURe_3FwFdzDgcYESVG56Vrw=w1366-h626",
+                    "price": 150,
+                    "minage": 17,
+                    "maxage": 40
                 }
+
+
             ]
         },
         {
@@ -23,20 +45,30 @@
                 
                 {
                     "name": "Formal Grey",
-                    "url": "https://lh5.googleusercontent.com/xkomrhZDI8a4IwKaOVmOkBJq0laoxsiQ0MKBWNH0ofqxDeJffE-kdeipOFRNmWoI1xDhSs44efU5hkBEmOgJ=w1920-h942",
+                    "url": " https://media3.newlookassets.com/i/newlook/590555708/womens/clothing/jackets-coats/light-grey-check-single-breasted-blazer-.jpg?strip=true&qlt=80&w=720",
                     "price": 199,
                     "minage": 20,
                     "maxage": 35
                 },
                 {
-                    "name": "Red Suit",
-                    "url": "https://lh5.googleusercontent.com/eeJDJtm6YeiR8Xvg7y91Gcnl6P-SCkt1F_gkUKL6vwCFkyyKru7IDBwbZ6856w7R6Qzv6-3EwOK5ar_twW_D=w1920-h942-rw",
-                    "price": 439,
+                    "name": "Black Casual",
+                    "url": " https://lh3.googleusercontent.com/j08Vx6yY1ODjCKwwXgwvjzsGs0hQgSdsno5S69Y3j4Rr-3z-TNTCL8iqjf8hT2_6Yjdwl6c06Rvl29HPxneh=w1366-h626 ",
+                    "price": 280,
+                    "minage": 14,
+                    "maxage": 25
+                },
+		  {
+                    "name": "White Casual",
+                    "url": "https://lh5.googleusercontent.com/pr_fJepl47ZBuNK-SYPAZc_c6prjhnTPBYdx6zOvreAhNpVXeM3wxXCPb8WWthyuBnC-leOkIkuOyJ2csz7w=w1366-h626",
+                    "price": 290,
                     "minage": 20,
                     "maxage": 35
                 }
+		  
+
             
             ]
         }
     ]
 }
+

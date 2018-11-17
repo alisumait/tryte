@@ -81,7 +81,7 @@ class App extends Component {
             ()=> {
             return(
                     
-            <h1>nhf</h1>
+            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
             )
         }} />
 
