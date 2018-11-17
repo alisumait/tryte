@@ -8,6 +8,7 @@ import Logo from './logo/logo.jsx';
 import Pricer from './pricer/pricer.jsx';
 import WebcamCap from "./webcam/webcam.jsx";
 import Waiting from "./waiting/waiting.jsx";
+import Items from "./items/items.jsx";
 import './App.css';
 
 class App extends Component {
@@ -22,7 +23,9 @@ class App extends Component {
         styles: [],
             garments: [],
             gender: "",
-            age: 0
+            age: 0,
+        minPrice: 0,
+        maxPrice:0
   };
 }
     
@@ -81,7 +84,7 @@ class App extends Component {
             ()=> {
             return(
                     
-            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
+            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
             )
         }} />
 

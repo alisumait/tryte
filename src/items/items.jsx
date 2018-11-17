@@ -1,36 +1,61 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import 'rc-slider/assets/index.css';
-import './pricer.css';
-const Slider = require('rc-slider');
-const createSliderWithTooltip = Slider.createSliderWithTooltip;
-const Range = createSliderWithTooltip(Slider.Range);
+import $ from "jquery";
+import './items.css';
 
-class Pricer extends Component {
+class Items extends Component {
 
+    constructor(props){
+        super(props);
+        
+        var arr;
+        
+        this.state = {
+            age: this.props.age,
+            gender: this.props.gender,
+            styles: this.props.styles,
+            garments: this.props.garments
+        }
+    }
+    
+    componentDidMount(){
+        var that = this;
+        
+        $.getJSON('data.json', function(data){
+        let age = that.props.age;
+        let price = that.props.price;
+            
+        if(that.props.gender.toLowerCase().includes('f')){
+            let female_list = data.clothes[1].female;
+            let filteredF = female_list.filter(a=>
+                age >= a.minage && age <= a.maxage
+            );
+            
+        }else{
+            let male_list = data.clothes[0].male;
+            let filteredM = male_list.filter(a=>
+                age >= a.minage && age <= a.maxage
+            );
+            console.log(filteredM);
+        }
+            
+        })
+        
+        
+    }
     
     render() {
-        const railstyles={
-            backgroundColor:'black',
-            height:'10px'
-        }
+        
+        
         
             return (
             
-                <div className="pricer">
-                <Range
-                    className="range"
-                defaultValue={[120, 250]}
-                    min={20}
-                    max={600}
-                    railStyle={railstyles}
-                    tipProps={{visible:true}}
-                    />
-                </div>
+                <h1>fdc</h1>
                 
             )
     }
 
 }
 
-export default Pricer;
+export default Items;

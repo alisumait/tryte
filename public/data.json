@@ -1,0 +1,83 @@
+{
+    "clothes": [
+        {
+            "male": [
+                {
+                    "name": "Red Suit",
+                    "url": "https://www.prepostseo.com/tmp_imgs/4042981371542487737.jpg",
+                    "price": 439,
+                    "minage": 20,
+                    "maxage": 35,
+                    "keywords": ["Business", "Casual", "Vintage"]
+                },
+                {
+                    "name": "Black Suit",
+                    "url": "https://www.thefashionisto.com/wp-content/uploads/2014/09/zhao-lei-elle-men-china-fashion-editorial-003.jpg",
+                    "price": 330,
+                    "minage": 18,
+                    "maxage": 37,
+                    "keywords": ["Rocker", "Sexy", "Business"]
+                },
+                {
+                    "name": "Blue Suit",
+                    "url":"https://i.pinimg.com/originals/04/34/79/043479f7d1527dfc70edc7bdd09512a2.jpg",
+                    "price": 280,
+                    "minage": 18,
+                    "maxage": 28,
+                    "keywords": ["Casual", "Bohemian", "Outdoor"]
+                },
+                {
+                    "name": "Black Jacket",
+                    "url": "https://media2.newlookassets.com/i/newlook/598971138M1/mens/clothing/jackets-coats/dark-green-check-borg-collar-aviator-jacket.jpg?strip=true&qlt=80&w=720",
+                    "price": 500,
+                    "minage": 18,
+                    "maxage": 38,
+                    "keywords": ["Electic", "Outdoor", "Casual"]
+                },
+ 		  {
+                    "name": "Yellow T-Shirt",
+                    "url": "https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720",
+                    "price": 150,
+                    "minage": 17,
+                    "maxage": 40,
+                    "keywords": ["Elegant", "Casual", "Sexy"]
+                }
+
+
+            ]
+        },
+        {
+            "female": [
+                
+                {
+                    "name": "Formal Grey",
+                    "url": "https://media3.newlookassets.com/i/newlook/590555708/womens/clothing/jackets-coats/light-grey-check-single-breasted-blazer-.jpg?strip=true&qlt=80&w=720",
+                    "price": 199,
+                    "minage": 20,
+                    "maxage": 35,
+                    "keywords": ["Casual", "Business", "90s"]
+                },
+                {
+                    "name": "Black Casual",
+                    "url": "https://media3.newlookassets.com/i/newlook/602663717M1/girls/clothing/skirts/girls-camel-check-skirt-.jpg?strip=true&qlt=80&w=720",
+                    "price": 280,
+                    "minage": 14,
+                    "maxage": 25,
+                    "keywords": ["Casual", "Sexy", "Business"]
+                },
+		  {
+                    "name": "White Casual",
+                    "url": "https://lh4.googleusercontent.com/-6M6fFrAZ8q4/TX380nhkshI/AAAAAAAAADQ/eFJxXus6JxM/s1600/Zara2011March10.jpg",
+                    "price": 290,
+                    "minage": 20,
+                    "maxage": 35,
+                    "keywords": ["Rocker", "Sexy", "Outdoor"]
+                }
+		  
+
+            
+            ]
+        }
+    ]
+}
+
