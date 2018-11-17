@@ -25,6 +25,7 @@ class App extends Component {
         this.handleDataWebcam = this.handleDataWebcam.bind(this);
         this.handleDataPricer = this.handleDataPricer.bind(this);
         this.handleSpeech = this.handleSpeech.bind(this)
+        this.stopSpeak = this.stopSpeak.bind(this);
 
         this.state = {
             value: 50,
@@ -59,6 +60,11 @@ class App extends Component {
         const synth = window.speechSynthesis;
         utterance.text = text;
         synth.speak(utterance);
+    }
+
+    stopSpeak(){
+        const synth = window.speechSynthesis;
+        synth.cancel();
     }
 
     startConversation(sentence) {
@@ -125,7 +131,7 @@ class App extends Component {
                                 <div className="main">
                                     <Logo></Logo>
                                     <Pricer ref={this.pricerChild} onPricerDone={this.PricerDone} onData={this.handleDataPricer}/>
-                                    <Link to="/start"><input id="link-btn" type="button" className="btn btn-primary" value="Start"></input></Link>
+                                    <Link to="/start"><input id="link-btn" type="button" className="btn btn-primary" value="Start" onClick={this.stopSpeak}></input></Link>
                                 </div>
                             )
                         }
@@ -141,12 +147,19 @@ class App extends Component {
                             )
                         }
                     } />
+                    <Route exact strict path="/processing" render={
+                        () => {
+                            return (
+                                 <Waiting></Waiting>
+                             )
+                        }
+                    } />
 
 <Route exact strict path="/items" render={
             ()=> {
             return(
                     
-            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
+            <Items age={this.state. age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
             )
         }} />
 
