@@ -137,8 +137,9 @@ class App extends Component {
                     <Route exact strict path="/items" render={
                         () => {
                             return (
-
-                                <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
+                                <h1></h1>
+                                //not implemented yet
+                                // <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} />
                             )
                         }} />
 
