@@ -51,7 +51,7 @@ class Items extends Component {
         
             return (
             
-                <h1>fdc</h1>
+                <h1></h1>
                 
             )
     }

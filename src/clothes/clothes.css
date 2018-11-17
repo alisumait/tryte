@@ -1,0 +1,42 @@
+.clothes{
+    height: 250px;
+    margin: auto;
+    display: block;
+    bottom: 0;
+}
+.container-fluid:first-child{
+    padding-top: 116px;
+}
+
+.words{
+    text-align: center;
+    z-index: 4;
+    width: 70%;
+    height: 40px;
+    margin: auto;
+    background-color: white;
+    padding-top: 3px;
+    margin-bottom: 2px;
+
+}
+.words h1{
+    font-size: 26px;
+    font-weight: bold;
+    float: left;
+    display: inline-block;
+
+}
+
+
+.words h4{
+    display: inline-block;
+    float: right;
+        font-weight: lighter;
+
+}
+
+p{
+    display: inline;
+    font-size: 22px;
+        font-weight: normal;
+}

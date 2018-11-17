@@ -9,6 +9,7 @@ import Pricer from './pricer/pricer.jsx';
 import WebcamCap from "./webcam/webcam.jsx";
 import Waiting from "./waiting/waiting.jsx";
 import Items from "./items/items.jsx";
+import Clothes from "./clothes/clothes.jsx";
 import './App.css';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -139,8 +140,42 @@ class App extends Component {
 <Route exact strict path="/items" render={
             ()=> {
             return(
-                    
+                 <div className="container-fluid">   
             <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
+
+<div className="row">
+    
+    <div className="col"></div>
+<div className="col-3">
+    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
+            </div>
+<div className="col-3">
+    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
+            </div>
+<div className="col-3">
+    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
+            </div>
+        <div className="col"></div>
+    </div>
+
+<div className="row">
+    
+    <div className="col"></div>
+<div className="col-3">
+    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
+            </div>
+<div className="col-3">
+    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
+            </div>
+<div className="col-3">
+    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
+            </div>
+        <div className="col"></div>
+    </div>
+
+
+    
+    </div>
             )
         }} />
 
