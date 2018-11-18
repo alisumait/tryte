@@ -4,6 +4,8 @@ import 'rc-slider/assets/index.css';
 import $ from "jquery";
 import './items.css';
 
+const utterance = new SpeechSynthesisUtterance();
+
 class Items extends Component {
 
     constructor(props) {
@@ -19,6 +21,21 @@ class Items extends Component {
             filtered: []
         }
     }
+
+    speak(text) {
+        const synth = window.speechSynthesis;
+        utterance.text = text;
+        synth.speak(utterance);
+      }
+    
+      startConversation(sentence) {
+        this.speak(sentence);
+      }
+    
+      componentWillMount() {
+        setTimeout(()=>this.startConversation('These are some samples of what might be good with you considering you budget'), 500)
+        
+      }
 
     componentDidMount() {
         var that = this;
