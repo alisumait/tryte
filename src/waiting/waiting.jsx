@@ -23,7 +23,7 @@ class Waiting extends Component {
         var that = this;
         setTimeout(function(){
             that.setState({end: true});
-        },3000)
+        },6500)
         
     }
     render() {

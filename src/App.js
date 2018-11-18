@@ -23,7 +23,10 @@ class App extends Component {
         super(props);
 
         this.PricerDone = this.PricerDone.bind(this);
-        this.handleData = this.handleData.bind(this);
+        this.handleDataWebcam = this.handleDataWebcam.bind(this);
+        this.handleDataPricer = this.handleDataPricer.bind(this);
+        this.handleSpeech = this.handleSpeech.bind(this)
+        this.stopSpeak = this.stopSpeak.bind(this);
 
         this.state = {
             value: 50,
@@ -31,11 +34,19 @@ class App extends Component {
             garments: [],
             gender: "",
             age: 0,
-        minPrice: 0,
-        maxPrice:0
-  };
-}
-    handleData(data) {
+            minPrice: 0,
+            maxPrice: 0
+        };
+
+        this.pricerChild = React.createRef();
+    }
+
+    handleDataPricer(data){
+        this.state.minPrice = parseInt(data[0]) ;
+        this.state.maxPrice = parseInt(data[1]);
+    }
+
+    handleDataWebcam(data) {
         console.log(data);
 
         //        this.state = data;
@@ -43,12 +54,18 @@ class App extends Component {
         this.state.garments = data.garments;
         this.state.gender = data.gender;
         this.state.styles = data.styles;
-            }
-    
+        console.log(this.state)
+    }
+
     speak(text) {
         const synth = window.speechSynthesis;
         utterance.text = text;
         synth.speak(utterance);
+    }
+
+    stopSpeak(){
+        const synth = window.speechSynthesis;
+        synth.cancel();
     }
 
     startConversation(sentence) {
@@ -65,7 +82,11 @@ class App extends Component {
             console.log('djdfhjsfdjkfaskk   ')
             this.setState({
                 start: true
+
             });
+            // this.pricerChild.current.sendData()
+            console.log(this.state)
+            console.log(this.pricerChild)
         } else {
             this.startConversation('Why not, we gotta go. Do you want to start?');
         }
@@ -110,72 +131,36 @@ class App extends Component {
                             return (
                                 <div className="main">
                                     <Logo></Logo>
-                                    <Pricer onPricerDone={this.PricerDone} />
-                                    <Link to="/start"><input id="link-btn" type="button" className="btn btn-primary" value="Start"></input></Link>
+                                    <Pricer ref={this.pricerChild} onPricerDone={this.PricerDone} onData={this.handleDataPricer}/>
+                                    <Link to="/start"><input id="link-btn" type="button" className="btn btn-primary" value="Start" onClick={this.stopSpeak}></input></Link>
                                 </div>
                             )
                         }
                     } />
 
-        <Route exact strict path="/start" render={
-            ()=> {
-            return(
-                    
-            <WebcamCap onData={this.handleData}/>
-                    
-        )
-            }
-        } />
 
-<Route exact strict path="/processing" render={
-            ()=> {
-            return(
-                    
-            <Waiting></Waiting>
-                    
-        )
-            }
-        } />
+                    <Route exact strict path="/start" render={
+                        () => {
+                            return (
+
+                                <WebcamCap onData={this.handleDataWebcam}/>
+
+                            )
+                        }
+                    } />
+                    <Route exact strict path="/processing" render={
+                        () => {
+                            return (
+                                 <Waiting></Waiting>
+                             )
+                        }
+                    } />
 
 <Route exact strict path="/items" render={
             ()=> {
             return(
-                 <div className="container-fluid">   
-            <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
-
-<div className="row">
     
-    <div className="col"></div>
-<div className="col-3">
-    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
-            </div>
-<div className="col-3">
-    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
-            </div>
-<div className="col-3">
-    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
-            </div>
-        <div className="col"></div>
-    </div>
-
-<div className="row">
-    
-    <div className="col"></div>
-<div className="col-3">
-    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
-            </div>
-<div className="col-3">
-    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
-            </div>
-<div className="col-3">
-    <Clothes name={"Hi"} price={323} url="https://media3.newlookassets.com/i/newlook/584889401M1/herren/bekleidung/jacken-maentel/schwarze-jeansjacke-mit-kn%C3%B6pfen-und-kapuze.jpg?strip=true&qlt=80&w=720"/>
-            </div>
-        <div className="col"></div>
-    </div>
-
-
-    
-    </div>
+    <Items age={this.state.age} gender={this.state.gender} styles={this.state.styles} garments={this.state.garments} minPrice={this.state.minPrice} maxPrice={this.state.maxPrice} />
             )
         }} />
 
